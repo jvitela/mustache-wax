@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jonathan Vitela -- Admin -- https://twitter.com/j_vitel
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    Javascript
