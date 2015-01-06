@@ -17,13 +17,24 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/jvitela/mustache-wax">View on GitHub</a>
-
-          <h1 id="project_title">Mustache-wax</h1>
-          <h2 id="project_tagline">Wax is an extension for Mustache.js, it enables the use of formatters inside of Mustache expressions</h2>
+		  <img id="logo" src="images/logo.png" alt="logo"/>
+          <h1 id="project_title">
+			Mustache-Wax
+		  </h1>
+          <h2 id="project_tagline">
+			Wax is an extension for <a href="https://github.com/janl/mustache.js/">Mustache.js</a> 
+			which enables the use of formatters inside of expressions <em>{{ expression | formatter }}</em>
+			</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/jvitela/mustache-wax/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/jvitela/mustache-wax/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/jvitela/mustache-wax/zipball/master">
+				Download this project as a .zip file
+				<abbr>.zip</abbr>
+			  </a>
+              <a class="tar_download_link" href="https://github.com/jvitela/mustache-wax/tarball/master">
+				Download this project as a tar.gz file
+				<abbr>.tgz</abbr>
+			  </a>
             </section>
         </header>
     </div>
@@ -32,17 +43,27 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="mustache-wax" class="anchor" href="#mustache-wax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mustache-Wax</h1>
+			<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+			Requirements.
+		</h1>
 
-<p>Wax is an extension for Mustache.js, it enables the use of formatters inside of Mustache expressions in a similar fasion of Angular filters.</p>
-
-<p>This extension requires that <strong>String.prototype.trim()</strong> method exists, you can grab a Polyfill from 
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">MDN site</a>:</p>
+<p>This extension requires that <strong>String.prototype.trim()</strong> method exists, you can grab a Polyfill from the
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">MDN documentation.</a></p>
 
 <h1>
-<a id="quick-example" class="anchor" href="#quick-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick example</h1>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+Setup.</h1>
+<p>
+	Just include mustache-wax.js library after mustache.js
+</p>
+<div class="highlight highlight-html">
+<pre>&lt;script src="mustache.js"&gt;&lt;/script&gt;
+&lt;script src="mustache-wax.js"&gt;&lt;/script&gt;</pre></div>
 
-<p>First you need to define some filters:</p>
+<p>
+	By default there are no formatters defined, 
+	you need to define them yourself as <strong>Mustache.Formatters</strong>, for example:
+</p>
 
 <div class="highlight highlight-javascript"><pre>    Mustache.Formatters <span class="pl-k">=</span> {
         <span class="pl-s1"><span class="pl-pds">"</span><span class="pl-en">uppercase</span><span class="pl-pds">"</span></span>: <span class="pl-st">function</span> (<span class="pl-vpf">str</span>) {
@@ -63,7 +84,8 @@
         }
     };</pre></div>
 
-<p>Then create a template and pass some data to render:</p>
+<h1><a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage.</h1>
+<p>Once your formatters are defined, just create a template and render it.</p>
 
 <div class="highlight highlight-javascript"><pre>    Mustache.render(
         <span class="pl-s1"><span class="pl-pds">"</span>{{ name | uppercase }}, {{ dob | date }}, {{ ssnum | lpad : 10 : '0' }}<span class="pl-pds">"</span></span>, 
@@ -79,12 +101,15 @@
 <pre><code>    JOHN DOE, 24/03/1981, 0000012345
 </code></pre>
 
+<h1>
+	<a id="formatters" class="anchor" href="#formatters" aria-hidden="true">
+		<span class="octicon octicon-link"></span>
+	</a>
+	Formatters.
+</h1>
+
 <p>A formatter is a function that modifies the value of an expression for display to the user. 
 They are used in templates and it is easy to define your own formatters.</p>
-
-<h1>
-<a id="using-formatters-in-templates" class="anchor" href="#using-formatters-in-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using formatters in templates</h1>
-
 <p>Formatters can be applied to expressions in templates using the following syntax:</p>
 
 <pre><code>{{ expression | formatter }}
@@ -100,7 +125,8 @@ They are used in templates and it is easy to define your own formatters.</p>
 <pre><code>{{ expression | formatter : argument1 : argument2 : ... }}
 </code></pre>
 
-<p>Arguments can be either an integer, a real, a string or another expression.
+<p>Arguments can be either an integer, a real, a string or another <em>expression</em>.
+<br>
 Integer arguments example: </p>
 
 <ul>
@@ -129,7 +155,9 @@ Integer arguments example: </p>
 </ul>
 
 <h1>
-<a id="chaining-formatters-and-passing-arguments" class="anchor" href="#chaining-formatters-and-passing-arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chaining formatters and passing arguments</h1>
+<a id="chaining" class="anchor" href="#chaining" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+	Chaining and passing arguments.
+</h1>
 
 <p>For example, assuming we have the following formatter and data:</p>
 

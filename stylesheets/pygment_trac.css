@@ -68,3 +68,8 @@
 .type-csharp .highlight .nn { color: #000000 }
 .type-csharp .highlight .s { color: #A31515 }
 .type-csharp .highlight .sc { color: #A31515 }
+
+.highlight-javascript .pl-s1 { color:#87aec7; }
+.highlight-javascript .pl-c1 { color:#AA0000;}
+.highlight-javascript .pl-k { color:#0044AA; }
+.highlight-javascript .pl-vpf { color:#98b562; }
