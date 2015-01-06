@@ -1,0 +1,25 @@
+{
+  "name": "mustache-wax",
+  "version": "0.9.0",
+  "description": "An extension for Mustache.js which enables the use of formatters inside of expressions",
+  "author": "JVitela",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvitela/mustache-wax"
+  },
+  "keywords": [
+    "mustache",
+    "formatter",
+    "filter",
+    "chaining",
+    "extension"
+  ],
+  "bugs": {
+    "url": "https://github.com/jvitela/mustache-wax/issues"
+  },
+  "homepage": "https://github.com/jvitela/mustache-wax",
+  "main": "mustache-wax.min.js",
+  "dependencies": {},
+  "devDependencies": {}
+}

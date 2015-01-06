@@ -1,0 +1,17 @@
+{
+  "name": "mustache-wax",
+  "version": "0.9.0",
+  "main": "mustache-wax.min.js",
+  "description": "Wax is an extension for Mustache.js which enables the use of formatters inside of expressions",
+  "authors": ["JVitela <j.vitel@gmail.com>"],
+  "license": "MIT",
+  "ignore": [
+    ".*",
+    "examples",
+    "test",
+    "grunt",
+    "gruntfile.js",
+    "*.json",
+    "*.md"
+  ]
+}
