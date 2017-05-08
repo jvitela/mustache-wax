@@ -1,11 +1,11 @@
 (function(root, wax) {
-	// Set up Backbone appropriately for the environment. Start with AMD.
+	// Set up appropriately for the environment. Start with AMD.
 	if (typeof define === 'function' && define.amd) {
 		define(['mustache'], function(mustache) {
-			wax(mustache);
+			wax(mustache || root.Mustache);
 		});
 
-	// Next for Node.js or CommonJS. jQuery may not be needed as a module.
+	// Next for Node.js or CommonJS.
 	} else if (typeof exports !== 'undefined') {
 		var mustache = require('mustache');
 		wax(mustache);
