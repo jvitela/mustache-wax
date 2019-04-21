@@ -21,17 +21,19 @@
   },  
   "main": "dist/mustache-wax.min.js",
   "scripts": {
-    "build": "npm run build_dev; npm run build_prod",
-    "build_prod": "npx webpack --mode=production -o dist/mustache-wax.min.js",
-    "build_dev": "npx webpack --mode=development -o dist/mustache-wax.js",
+    "build": "npm run build:dev; npm run build:prod",
+    "build:prod": "webpack --env.NODE_ENV=prod",
+    "build:dev": "webpack --env.NODE_ENV=dev",
     "test": "mocha --reporter spec test/spec.js"
+  },
+  "peerDependencies": {
+    "mustache": "^0.8.1"
   },
   "dependencies": {
   },
   "devDependencies": {
     "mocha": "^6.1.4",
     "chai": "^4.2.0",
-    "mustache": "^3.0.1",
     "webpack-cli": "^3.3.0",
     "webpack": "^4.30.0"
   },

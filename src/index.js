@@ -54,13 +54,12 @@ function wax(Mustache, Formatters = {}) {
     * Overwrite the Context::lookup method to add filter capabilities
     */
     Mustache.Context.prototype.lookup = function parseExpression(name) {
-        var i, l, expression, formatters;
-        formatters = name.split("|");
-        expression = formatters.shift().trim();
+        const formatters = name.split("|");
+        let expression = formatters.shift().trim();
         // call original lookup method
         expression = lookup.call(this, expression);
         // Apply the formatters
-        for (i = 0, l = formatters.length; i < l; ++i) {
+        for (let i = 0, l = formatters.length; i < l; ++i) {
             expression = applyFilter(expression, formatters[i], this.lookup.bind(this));
         }
         return expression;

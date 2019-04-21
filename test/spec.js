@@ -1,7 +1,7 @@
 
 const expect = require('chai').expect;
 const Mustache = require('mustache');
-const Wax = require('../src');
+const Wax = require('../dist/mustache-wax.js');
 
 describe('Wax for Mustache', () => {
     Wax(Mustache, {
