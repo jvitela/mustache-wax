@@ -36,7 +36,8 @@ Mustache.Formatters = {
 };
 
 QUnit.test( "Normal expression without formatter", function( assert ) {
-	var data = {name:"john"};
+	var data = { name: "john" };
+	debugger;
 	var resp = Mustache.render("{{&name}}", data);
 	assert.equal( resp, data.name, "Passed!");
 });

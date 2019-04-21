@@ -6,6 +6,22 @@ Wax is an extension for Mustache.js, it enables the use of formatters inside of 
 This extension requires that **String.prototype.trim()** method exists, you can grab a Polyfill from 
 [MDN site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim):
 
+Installation
+============
+
+  `npm install @jvitela/mustache-wax`
+
+Package usage
+==============
+```javascript
+	const Mustache = require('mustache');
+	const Wax = require('@jvitela/mustache-wax');
+
+	Wax(Mustache);
+	Mustache.Formatters = { ... };
+	Mustache.render(...);
+```
+
 Quick example
 =============
 

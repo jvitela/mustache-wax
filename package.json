@@ -1,12 +1,13 @@
 {
-  "name": "mustache-wax",
-  "version": "0.9.0",
+  "name": "@jvitela/mustache-wax",
+  "version": "1.0.0",
   "description": "An extension for Mustache.js which enables the use of formatters inside of expressions",
   "author": "JVitela",
+  "homepage": "https://jvitela.github.io/mustache-wax/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jvitela/mustache-wax"
+    "url": "git+https://github.com/jvitela/mustache-wax.git"
   },
   "keywords": [
     "mustache",
@@ -17,9 +18,24 @@
   ],
   "bugs": {
     "url": "https://github.com/jvitela/mustache-wax/issues"
+  },  
+  "main": "dist/mustache-wax.min.js",
+  "scripts": {
+    "build": "npm run build_dev; npm run build_prod",
+    "build_prod": "npx webpack --mode=production -o dist/mustache-wax.min.js",
+    "build_dev": "npx webpack --mode=development -o dist/mustache-wax.js",
+    "test": "mocha --reporter spec test/spec.js"
   },
-  "homepage": "https://github.com/jvitela/mustache-wax",
-  "main": "mustache-wax.min.js",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "chai": "^4.2.0",
+    "mustache": "^3.0.1",
+    "webpack-cli": "^3.3.0",
+    "webpack": "^4.30.0"
+  },
+  "directories": {
+    "test": "test"
+  }
 }
