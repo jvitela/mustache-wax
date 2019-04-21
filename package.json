@@ -1,6 +1,6 @@
 {
   "name": "@jvitela/mustache-wax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An extension for Mustache.js which enables the use of formatters inside of expressions",
   "author": "JVitela",
   "homepage": "https://jvitela.github.io/mustache-wax/",
