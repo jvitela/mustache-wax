@@ -22,6 +22,19 @@ Package usage
 	Mustache.render(...);
 ```
 
+Or simply pass the formatters as second argument of Wax function
+```javascript
+	const Mustache = require('mustache');
+	const Wax = require('@jvitela/mustache-wax');
+
+	Wax(Mustache, { 
+	    ... // Formatters
+	});
+	Mustache.Formatters; // Formatters will still be accessible here
+	Mustache.render(...);
+```
+
+
 Quick example
 =============
 
