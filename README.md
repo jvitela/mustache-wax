@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/jvitela/mustache-wax.svg?branch=master)](https://travis-ci.org/jvitela/mustache-wax)
-
 Mustache-Wax
 ============
+[![Travis][build-badge]][build]
+[![npm package][npm-badge]][npm]
 
 Wax is an extension for Mustache.js, it enables the use of formatters inside of Mustache expressions in a similar fasion of Angular filters.
 
@@ -150,3 +150,11 @@ The result will be:
 	25
 	30.14159
 ```
+
+
+
+[build-badge]: https://travis-ci.org/jvitela/mustache-wax.svg?branch=master
+[build]: https://travis-ci.org/jvitela/mustache-wax
+
+[npm-badge]: https://img.shields.io/npm/v/@jvitela/mustache-wax.svg?style=flat-square
+[npm]: https://www.npmjs.com/package/@jvitela/mustache-wax
