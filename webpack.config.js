@@ -1,13 +1,20 @@
-var path = require('path');
+var path = require("path");
 
-module.exports = env => ({
-  mode: env.NODE_ENV == 'prod' ? 'production' : 'development',
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: env.NODE_ENV == 'prod' ? 'mustache-wax.min.js' : 'mustache-wax.js',
-    library: 'wax',
-    libraryTarget: 'umd',
-    globalObject: 'this'
+module.exports = (_env, argv) => {
+  const isProduction = argv.mode == "production";
+  const config = {};
+  if (!isProduction) {
+    config.devtool = "source-map";
   }
-});
+  return {
+    ...config,
+    entry: "./src/index.js",
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: `mustache-wax.${isProduction ? "min.js" : "js"}`,
+      library: "wax",
+      libraryTarget: "umd",
+      globalObject: "this",
+    },
+  };
+};
