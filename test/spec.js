@@ -1,9 +1,9 @@
 
 const expect = require('chai').expect;
 const Mustache = require('mustache');
-const Wax = require('../dist/mustache-wax.js');
+const Wax = require('../dist/mustache-wax.min.js');
 
-describe('Wax for Mustache', () => {
+describe(`Wax for Mustache ${Mustache.version}`, () => {
     Wax(Mustache, {
         "uppercase": (str) => {
             return str.toUpperCase();
